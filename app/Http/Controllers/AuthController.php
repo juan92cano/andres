@@ -56,6 +56,9 @@ class AuthController extends Controller
         return redirect("/")->withSuccess('No tienes acceso. por favor registrate');
     }
 
+    /**
+     * Funcion para cerrar sesion 
+     */
     public function logout(){
         Auth::logout();
         Session::flush();

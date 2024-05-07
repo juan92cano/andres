@@ -7,14 +7,11 @@
 
         <title>Andres</title>
 
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
     </head>
     <body>
         @yield('content')
