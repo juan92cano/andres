@@ -19,7 +19,7 @@ class AuthController extends Controller
         }
 
         // Si no existe mostramos la vista de login
-        return view('login');
+        return view('login/login');
     }
 
     /**
