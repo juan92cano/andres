@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     /**
-     * Función que muestra la vista de logados (registradros en la base de datos) o la vista con el formulario
+     * Función que muestra la vista de index (registradros en la base de datos) o la vista con el formulario
      */
     public function index(){
         // Comprobamos si el usuario ya está logado
         if (Auth::check()){
-            // Si existe le mostramos la vista de logados
-            return view('logados');
+            // Si existe le mostramos la vista de index
+            return view('index');
         }
 
         // Si no existe mostramos la vista de login
@@ -36,9 +36,9 @@ class AuthController extends Controller
         //Almacenamos email password
         $credentials = $request->only('email','password');
 
-        //Si existe se lleva a la vista logados y se muestra mensaje
+        //Si existe se lleva a la vista index y se muestra mensaje
         if (Auth::attempt($credentials)){
-            return redirect()->intended('logados')->withSuccess('Login se realizó correctamente');
+            return redirect()->intended('index')->withSuccess('Login se realizó correctamente');
         }
 
         //Si no existe se redirecciona a formulario de login y se muestra mensaje
@@ -50,7 +50,7 @@ class AuthController extends Controller
      */
     public function logados(){
         if(Auth::check()){
-            return view('logados');
+            return view('index');
         }
 
         return redirect("/")->withSuccess('No tienes acceso. por favor registrate');
