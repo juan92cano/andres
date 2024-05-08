@@ -1,4 +1,4 @@
-@extends('app')
+@extends('login/app')
 @section('content')
 <main class="login-form">
     <div class="cotainer">
