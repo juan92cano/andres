@@ -38,11 +38,11 @@ class AuthController extends Controller
 
         //Si existe se lleva a la vista index y se muestra mensaje
         if (Auth::attempt($credentials)){
-            return redirect()->intended('index')->withSuccess('Login se realizó correctamente');
+            return redirect()->intended('index')->with('success', 'Login se realizó correctamente');
         }
 
         //Si no existe se redirecciona a formulario de login y se muestra mensaje
-        return redirect("/")->withSuccess('Los datos no son correctos');
+        return redirect("/")->with('error', 'Los datos no son correctos');
     }
 
     /**
@@ -53,7 +53,7 @@ class AuthController extends Controller
             return view('index');
         }
 
-        return redirect("/")->withSuccess('No tienes acceso. por favor registrate');
+        return redirect("/")->with('error', 'No tienes acceso. por favor registrate');
     }
 
     /**
@@ -62,6 +62,15 @@ class AuthController extends Controller
     public function logout(){
         Auth::logout();
         Session::flush();
-        return redirect("/")->withSuccess('Cierre de sesión correcto');
+        return redirect("/")->with('warning', 'Cierre de sesión correcto');
+    }
+
+        /**
+     * Funcion para cerrar sesion por tiempo de no uso
+     */
+    public function logout_time(){
+        Auth::logout();
+        Session::flush();
+        return redirect("/")->with('error', 'Su sesión expiró. Vuelva ingresar sus credenciales');
     }
 }

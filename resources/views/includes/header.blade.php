@@ -17,6 +17,7 @@
         <link id="myskin" rel="stylesheet" href="{{ asset('assets/css/skin-master.css')}}">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="{{ asset('assets/css/fa-brands.css')}}">
+        <script src="{{ asset('assets/js/my_js.js') }}"></script>
     </head>
     <div class="page-wrapper">
         <div class="page-inner">
