@@ -1,4 +1,5 @@
 @extends('login/app_login')
+@section('title', 'Login') {{-- Titulo de la pagina --}}
 @section('content')
 @if(session('success'))
     <h1>{{session('success')}}</h1>

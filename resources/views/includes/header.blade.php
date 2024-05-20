@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Login
+             @yield('title') - Project
         </title>
         <meta name="description" content="Login">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

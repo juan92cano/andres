@@ -1,4 +1,5 @@
 @extends('app')
+@section('title','Index') {{-- Titulo de la pagina --}}
 @section('content')
 
             <!-- BEGIN Page Content -->
@@ -41,5 +42,4 @@
                 </div>
             </main>
             
-
 @endsection
