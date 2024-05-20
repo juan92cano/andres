@@ -38,7 +38,7 @@ class AuthController extends Controller
 
         //Si existe se lleva a la vista index y se muestra mensaje
         if (Auth::attempt($credentials)){
-            return redirect()->intended('index')->with('success', 'Login se realizó correctamente');
+            return redirect()->intended('index')->with('success', 'Bienvenido de nuevo...');
         }
 
         //Si no existe se redirecciona a formulario de login y se muestra mensaje
